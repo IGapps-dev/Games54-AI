@@ -20,7 +20,37 @@
 		822C7D282E01D68300180511 /* ExpeditionSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822C7D1D2E01D68300180511 /* ExpeditionSettingsViewController.swift */; };
 		822C7D292E01D68300180511 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822C7D202E01D68300180511 /* MainTabBarController.swift */; };
 		822C7D2A2E01D68300180511 /* ExcavationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822C7D1C2E01D68300180511 /* ExcavationViewController.swift */; };
+		8233D29C2E0AABCB00A56D4C /* AppMetricaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8233D29B2E0AABCB00A56D4C /* AppMetricaCore */; };
+		8233D29F2E0AAC1F00A56D4C /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 8233D29E2E0AAC1F00A56D4C /* OneSignalExtension */; };
+		8233D2A12E0AAC1F00A56D4C /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 8233D2A02E0AAC1F00A56D4C /* OneSignalFramework */; };
+		8233D2A32E0AAC1F00A56D4C /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 8233D2A22E0AAC1F00A56D4C /* OneSignalInAppMessages */; };
+		8233D2B12E0AAC7500A56D4C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8233D2AA2E0AAC7500A56D4C /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8233D2BB2E0AAC7800A56D4C /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8233D2B82E0AAC7800A56D4C /* NotificationService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8233D2AF2E0AAC7500A56D4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 822C7CE32E01D41200180511 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8233D2A92E0AAC7500A56D4C;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8233D2B62E0AAC7500A56D4C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8233D2B12E0AAC7500A56D4C /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		652996DD53EDD25D9ADBD011 /* Pods-ArchaeologistFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchaeologistFind.debug.xcconfig"; path = "Target Support Files/Pods-ArchaeologistFind/Pods-ArchaeologistFind.debug.xcconfig"; sourceTree = "<group>"; };
@@ -36,6 +66,11 @@
 		822C7D202E01D68300180511 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		822C7D212E01D68300180511 /* MatchGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchGameViewController.swift; sourceTree = "<group>"; };
 		822C7D222E01D68300180511 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		8233D2A42E0AAC6300A56D4C /* ArchaeologistFind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArchaeologistFind.entitlements; sourceTree = "<group>"; };
+		8233D2A52E0AAC6600A56D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8233D2AA2E0AAC7500A56D4C /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8233D2B72E0AAC7800A56D4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8233D2B82E0AAC7800A56D4C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B5C6BCA7AD8E9F5A2E0F595F /* Pods-ArchaeologistFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchaeologistFind.release.xcconfig"; path = "Target Support Files/Pods-ArchaeologistFind/Pods-ArchaeologistFind.release.xcconfig"; sourceTree = "<group>"; };
 		BBA836F6D15A798F921584F5 /* Pods_ArchaeologistFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArchaeologistFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -45,8 +80,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8233D2A32E0AAC1F00A56D4C /* OneSignalInAppMessages in Frameworks */,
+				8233D29C2E0AABCB00A56D4C /* AppMetricaCore in Frameworks */,
 				822C7D1A2E01D42700180511 /* SnapKit in Frameworks */,
 				5E8999A240AC537426342817 /* Pods_ArchaeologistFind.framework in Frameworks */,
+				8233D29F2E0AAC1F00A56D4C /* OneSignalExtension in Frameworks */,
+				8233D2A12E0AAC1F00A56D4C /* OneSignalFramework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8233D2A72E0AAC7500A56D4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				822C7D0F2E01D41900180511 /* ArchaeologistFind */,
+				8233D2B92E0AAC7800A56D4C /* OneSignalNotificationServiceExtension */,
 				822C7CEC2E01D41200180511 /* Products */,
 				1FF5DCFC09E358A5D746F0D2 /* Pods */,
 				93EBFD9FE90FC6ADB1E907B8 /* Frameworks */,
@@ -76,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				822C7CEB2E01D41200180511 /* ArchaeologistFind.app */,
+				8233D2AA2E0AAC7500A56D4C /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +131,8 @@
 		822C7D0F2E01D41900180511 /* ArchaeologistFind */ = {
 			isa = PBXGroup;
 			children = (
+				8233D2A52E0AAC6600A56D4C /* Info.plist */,
+				8233D2A42E0AAC6300A56D4C /* ArchaeologistFind.entitlements */,
 				822C7D1B2E01D68300180511 /* CatalogViewController.swift */,
 				822C7D1C2E01D68300180511 /* ExcavationViewController.swift */,
 				822C7D1D2E01D68300180511 /* ExpeditionSettingsViewController.swift */,
@@ -96,6 +146,15 @@
 				822C7D0C2E01D41900180511 /* LaunchScreen.storyboard */,
 			);
 			path = ArchaeologistFind;
+			sourceTree = "<group>";
+		};
+		8233D2B92E0AAC7800A56D4C /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8233D2B72E0AAC7800A56D4C /* Info.plist */,
+				8233D2B82E0AAC7800A56D4C /* NotificationService.swift */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		93EBFD9FE90FC6ADB1E907B8 /* Frameworks */ = {
@@ -117,18 +176,43 @@
 				822C7CE72E01D41200180511 /* Sources */,
 				822C7CE82E01D41200180511 /* Frameworks */,
 				822C7CE92E01D41200180511 /* Resources */,
+				8233D2B62E0AAC7500A56D4C /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8233D2B02E0AAC7500A56D4C /* PBXTargetDependency */,
+			);
+			name = ArchaeologistFind;
+			packageProductDependencies = (
+				822C7D192E01D42700180511 /* SnapKit */,
+				8233D29B2E0AABCB00A56D4C /* AppMetricaCore */,
+				8233D29E2E0AAC1F00A56D4C /* OneSignalExtension */,
+				8233D2A02E0AAC1F00A56D4C /* OneSignalFramework */,
+				8233D2A22E0AAC1F00A56D4C /* OneSignalInAppMessages */,
+			);
+			productName = ArchaeologistFind;
+			productReference = 822C7CEB2E01D41200180511 /* ArchaeologistFind.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8233D2A92E0AAC7500A56D4C /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8233D2B32E0AAC7500A56D4C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				8233D2A62E0AAC7500A56D4C /* Sources */,
+				8233D2A72E0AAC7500A56D4C /* Frameworks */,
+				8233D2A82E0AAC7500A56D4C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ArchaeologistFind;
+			name = OneSignalNotificationServiceExtension;
 			packageProductDependencies = (
-				822C7D192E01D42700180511 /* SnapKit */,
 			);
-			productName = ArchaeologistFind;
-			productReference = 822C7CEB2E01D41200180511 /* ArchaeologistFind.app */;
-			productType = "com.apple.product-type.application";
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 8233D2AA2E0AAC7500A56D4C /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -141,6 +225,9 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					822C7CEA2E01D41200180511 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					8233D2A92E0AAC7500A56D4C = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -157,12 +244,15 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				822C7D182E01D42700180511 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8233D29A2E0AABCB00A56D4C /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */,
+				8233D29D2E0AAC1F00A56D4C /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 			);
 			productRefGroup = 822C7CEC2E01D41200180511 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				822C7CEA2E01D41200180511 /* ArchaeologistFind */,
+				8233D2A92E0AAC7500A56D4C /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -174,6 +264,13 @@
 			files = (
 				822C7D142E01D41900180511 /* Assets.xcassets in Resources */,
 				822C7D162E01D41900180511 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8233D2A82E0AAC7500A56D4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +318,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8233D2A62E0AAC7500A56D4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8233D2BB2E0AAC7800A56D4C /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8233D2B02E0AAC7500A56D4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8233D2A92E0AAC7500A56D4C /* OneSignalNotificationServiceExtension */;
+			targetProxy = 8233D2AF2E0AAC7500A56D4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		822C7D0C2E01D41900180511 /* LaunchScreen.storyboard */ = {
@@ -360,9 +473,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ArchaeologistFind/ArchaeologistFind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArchaeologistFind/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Relic Match Digger";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -374,7 +489,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AntoineVaugelas.relic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -393,9 +508,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ArchaeologistFind/ArchaeologistFind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArchaeologistFind/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Relic Match Digger";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -407,9 +524,67 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AntoineVaugelas.relic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8233D2B42E0AAC7500A56D4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AntoineVaugelas.relic.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8233D2B52E0AAC7500A56D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AntoineVaugelas.relic.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -441,6 +616,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		8233D2B32E0AAC7500A56D4C /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8233D2B42E0AAC7500A56D4C /* Debug */,
+				8233D2B52E0AAC7500A56D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -452,6 +636,22 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		8233D29A2E0AABCB00A56D4C /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appmetrica/appmetrica-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+		8233D29D2E0AAC1F00A56D4C /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.14;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -459,6 +659,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 822C7D182E01D42700180511 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8233D29B2E0AABCB00A56D4C /* AppMetricaCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8233D29A2E0AABCB00A56D4C /* XCRemoteSwiftPackageReference "appmetrica-sdk-ios" */;
+			productName = AppMetricaCore;
+		};
+		8233D29E2E0AAC1F00A56D4C /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8233D29D2E0AAC1F00A56D4C /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignalExtension;
+		};
+		8233D2A02E0AAC1F00A56D4C /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8233D29D2E0AAC1F00A56D4C /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignalFramework;
+		};
+		8233D2A22E0AAC1F00A56D4C /* OneSignalInAppMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8233D29D2E0AAC1F00A56D4C /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
+			productName = OneSignalInAppMessages;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
