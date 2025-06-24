@@ -59,7 +59,7 @@ class LoadingViewController: UIViewController {
         
         
         
-        generalServicok.generalAboutStatus { is200 in
+        ArchaeologistServicok.ArchaeologistAboutStatus { is200 in
             DispatchQueue.main.async {
                 if is200 {
                     if let appDelegate = UIApplication.shared.delegate as? AppDelegate {

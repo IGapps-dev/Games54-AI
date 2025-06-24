@@ -9,26 +9,26 @@ UIApplicationDelegate {
     
    
     
-    private func generalPixta() {
-        let generalCont: UIViewController
-        if let generalLast = generalServicePosl.generalLastovka {
-            generalCont = WebviewVC(url: generalLast)
+    private func ArchaeologistPixta() {
+        let ArchaeologistCont: UIViewController
+        if let ArchaeologistLast = ArchaeologistServicePosl.ArchaeologistLastovka {
+            ArchaeologistCont = WebviewVC(url: ArchaeologistLast)
             window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = generalCont;window?.makeKeyAndVisible()
+            window?.rootViewController = ArchaeologistCont;window?.makeKeyAndVisible()
         } else {
-            generalCont = LoadingViewController()
-            let navigationController = UINavigationController(rootViewController: generalCont); window = UIWindow(frame: UIScreen.main.bounds)
+            ArchaeologistCont = LoadingViewController()
+            let navigationController = UINavigationController(rootViewController: ArchaeologistCont); window = UIWindow(frame: UIScreen.main.bounds)
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }
     }
     
-    private func generalMetrica() {
-        let generalConfig = AppMetricaConfiguration(apiKey: "0c617def-c316-4a98-ac51-af8673cecc58")
-         AppMetrica.activate(with: generalConfig!)
+    private func ArchaeologistMetrica() {
+        let ArchaeologistConfig = AppMetricaConfiguration(apiKey: "0c617def-c316-4a98-ac51-af8673cecc58")
+         AppMetrica.activate(with: ArchaeologistConfig!)
     }; var restrictRotation: UIInterfaceOrientationMask = .all
     
-    private let generalIdChecker = OneSignalIDChecker()
+    private let ArchaeologistIdChecker = OneSignalIDChecker()
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return restrictRotation
@@ -36,9 +36,9 @@ UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         OneSignal.initialize("732eb847-eac2-4a2b-a558-10c78a4eb135", withLaunchOptions: nil)
-        generalIdChecker.generalStartyem()
-        generalMetrica()
-        generalPixta()
+        ArchaeologistIdChecker.ArchaeologistStartyem()
+        ArchaeologistMetrica()
+        ArchaeologistPixta()
         return true
     }
 }
